@@ -24,7 +24,11 @@ module.exports = merge(common, {
             options: {
               ident: 'postcss',
               // eslint-disable-next-line
-              plugins: [require('autoprefixer')()],
+              plugins: [
+                require('postcss-import'),
+                require('tailwindcss'),
+                require('autoprefixer'),
+              ],
             },
           },
           'sass-loader',
