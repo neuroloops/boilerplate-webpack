@@ -1,4 +1,3 @@
-import 'bootstrap';
 import './styles/styles.scss';
 
 const version = 4;
