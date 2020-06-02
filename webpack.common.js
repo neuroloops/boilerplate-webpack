@@ -42,7 +42,20 @@ module.exports = {
         ],
       }, // end images rule
       {
-        test: /\.(woff(2)?|ttf|eot|svg)$/,
+        test: /\.svg$/,
+        use: [
+          {
+            loader: 'svg-url-loader',
+            options: {
+              limit: 10000,
+              name: '[name]-[contenthash].[ext]',
+              outputPath: 'images',
+            },
+          },
+        ],
+      }, // end svg rule
+      {
+        test: /\.(woff(2)?|ttf|eot)$/,
         use: [
           {
             loader: 'file-loader',
